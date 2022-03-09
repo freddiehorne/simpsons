@@ -1,15 +1,23 @@
 import React, { Component } from "react";
 
 class Like extends Component {
-	state = { clicked: false };
+	state = {};
 	render() {
-		const buttonText = this.state.clicked ? "Liked" : "Like";
+		// console.log(this.props.votes);
+		const buttonText = this.props.votes[this.props.character]
+			? "Unlike"
+			: "Like";
+
+		const clicked = () => {
+			this.props.changeCount(this.props.character);
+		};
+
 		return (
 			<>
-				<button onClick={() => this.setState({ clicked: !this.state.clicked })}>
-					{buttonText}
-				</button>
-				{this.state.clicked && <p>{this.props.character} &#10003;</p>}
+				<button onClick={() => clicked()}>{buttonText}</button>
+				{this.props.votes[this.props.character] && (
+					<p>{this.props.character} &#10003;</p>
+				)}
 			</>
 		);
 	}

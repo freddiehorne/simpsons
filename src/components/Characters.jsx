@@ -17,13 +17,23 @@ class Characters extends Component {
 						<div className="character">
 							<Character character={char.character} />
 							<Image image={char.image} character={char.character} />
-							<Quote quote={char.quote} character={char.character} />
+							<Quote
+								quote={char.quote}
+								character={char.character}
+								changeCount={this.props.changeCount}
+								votes={this.props.votes}
+							/>
 							<Delete delete={this.props.delete} index={index} />
 						</div>
 					) : (
 						<div className="character">
 							<Character character={char.character} />
-							<Quote quote={char.quote} character={char.character} />
+							<Quote
+								quote={char.quote}
+								character={char.character}
+								changeCount={this.props.changeCount}
+								votes={this.props.votes}
+							/>
 							<Image image={char.image} character={char.character} />
 							<Delete delete={this.props.delete} index={index} />
 						</div>

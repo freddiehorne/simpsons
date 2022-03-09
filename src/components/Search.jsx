@@ -10,7 +10,7 @@ class Search extends Component {
 				<input
 					id="search"
 					type="search"
-					placeholder="Type character here"
+					placeholder="Type character here..."
 					onInput={this.props.onInput}
 				/>
 			</div>

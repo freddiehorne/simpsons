@@ -7,7 +7,11 @@ class Quote extends Component {
 		return (
 			<div>
 				<p>{this.props.quote}</p>
-				<Like character={this.props.character} />
+				<Like
+					votes={this.props.votes}
+					character={this.props.character}
+					changeCount={this.props.changeCount}
+				/>
 			</div>
 		);
 	}

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import Characters from "./components/Characters";
+import Search from "./components/Search";
+import Total from "./components/Total";
 
 import axios from "axios";
-import Search from "./components/Search";
 
 class App extends Component {
-	state = {};
+	state = { count: 0, votes: {} };
 
 	componentDidMount = () => {
 		this.getSimpsonsData();
@@ -35,19 +36,38 @@ class App extends Component {
 		this.setState({ simpsonsData: copy });
 	};
 
+	changeCount = (character) => {
+		const currentVote = this.state.votes[character];
+
+		this.setState({
+			votes: {
+				...this.state.votes,
+				[character]:
+					currentVote === undefined || currentVote === false ? true : false,
+			},
+		});
+	};
+
 	render() {
 		if (!this.state.simpsonsData) {
 			return <h1>Loading Simpsons data...</h1>;
 		}
 		const filtered = this.search();
+		const values = Object.values(this.state.votes);
+		const results = values.filter((item) => item === true);
 		return (
 			<div className="main">
-				<Search onInput={this.onInput} />
+				<div className="top">
+					<Search onInput={this.onInput} />
+					<Total total={results.length} />
+				</div>
 				<Characters
 					simpsonsData={
 						filtered.length > 0 ? filtered : this.state.simpsonsData
 					}
 					delete={this.deleteCharacter}
+					changeCount={this.changeCount}
+					votes={this.state.votes}
 				/>
 			</div>
 		);
