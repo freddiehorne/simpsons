@@ -16,9 +16,21 @@ code {
 		monospace;
 }
 
+.logo {
+	width: 30%;
+	height: 200px;
+	margin: auto;
+}
+
 .top {
 	display: flex;
 	justify-content: space-between;
+}
+
+.top button {
+	font-weight: bold;
+	height: 70%;
+	margin-top: 20px;
 }
 
 .top h2 {
@@ -31,18 +43,18 @@ code {
 		rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
 		rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 
-	padding: 10% 5% 0;
+	padding: 5% 5% 0;
 
 	display: flex;
 	justify-content: space-around;
 
-	height: 50vh;
+	height: 40vh;
 
 	border-radius: 10px;
 }
 
 img {
-	height: 80%;
+	height: 90%;
 }
 
 label,
@@ -73,4 +85,5 @@ button {
 
 div {
 	padding: 10px;
+	margin: 10px;
 }

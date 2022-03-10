@@ -4,13 +4,15 @@ import Like from "./Like";
 class Quote extends Component {
 	state = {};
 	render() {
+		const { character, quote, votes, changeCount } = this.props;
 		return (
 			<div>
 				<p>{this.props.quote}</p>
 				<Like
-					votes={this.props.votes}
-					character={this.props.character}
-					changeCount={this.props.changeCount}
+					character={character}
+					votes={votes}
+					quote={quote}
+					changeCount={changeCount}
 				/>
 			</div>
 		);
