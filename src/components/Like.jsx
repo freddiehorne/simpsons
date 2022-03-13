@@ -4,7 +4,7 @@ class Like extends Component {
 	state = {};
 	render() {
 		const { character, votes, quote, changeCount } = this.props;
-		const buttonText = votes[character] ? "Unlike" : "Like";
+		const buttonText = votes[quote] ? "Unlike" : "Like";
 
 		const clicked = () => {
 			changeCount(quote);

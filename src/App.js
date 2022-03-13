@@ -16,7 +16,7 @@ class App extends Component {
 	getSimpsonsData = async () => {
 		try {
 			const result = await axios.get(
-				"https://thesimpsonsquoteapi.glitch.me/quotes?count=10"
+				"https://thesimpsonsquoteapi.glitch.me/quotes?count=20"
 			);
 			this.setState({ simpsonsData: result.data });
 		} catch (error) {
